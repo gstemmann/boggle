@@ -15,40 +15,31 @@
             rel="stylesheet"
             href='/static/style.css'
         >
-        <title>Document</title>
+        <title>Boggle</title>
     </head>
 
     <body>
-        <form> <input
-                type="text"
-                id="form"
-                class="form"
-                name="submission"
-                placeholder="put something in this textbox"
-            ></input>
-            <button
-                type="submit"
-                id="button"
-            > Click here to submit</button>
-        </form>
         <div class="text-container">
             <p id="time-container">Time remaining: <span id='timer'></span> sec </p>
             <p id="score">here's your score: 0</p>
+            <p id="highscore">high score: {{ highscore }}</p>
+            <p id="highscore">Number of times played: {{ numplays }}</p>
             <p id="response"></p>
-
         </div>
+        <form> <input
+            type="text"
+            id="form"
+            class="form"
+            name="submission"
+            placeholder="put something in this box"
+        ></input>
+        <button
+            type="submit"
+            id="button"
+        > Click here to submit</button>
+        </form>
 
-        <h1> {{ board }}</h1>
-        <ul> blue people
-            <!-- {% for this in that %}
-            <li>{{board}}</li>
-            <li>{{board}}</li>
-            <li>{{board}}</li>
-            <li>{{board}}</li>
-            <li>{{board}}</li>
-            {% endfor %}
- -->
-        </ul>
+        
         <div class="conatiner">
             <table>
                 {% for row in board %}
@@ -61,7 +52,6 @@
             </table>
         </div>
         <script src='http://unpkg.com/jquery'></script>
-        <!-- <script src='http://unpkg.com/axios/dist/axios.min.js'></script> -->
         <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
         <script src='/static/script.js'></script>
     </body>
